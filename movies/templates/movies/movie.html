@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page_title  %}
+Film
+{% endblock  %}
+
+{% block content %}
+    <h1>Super film pre tento tyzden</h1>
+    <p>Pulp Fiction</p>
+    <p>{{movie_name|title}}</p>
+
+    {% if movie_description is not None %}
+        <p>{{ movie_description}}</p>
+    {% else %}
+        <p>Popis filmu nie je k dispozicii</p>
+    {% endif %}
+{% endblock %}
