@@ -1,4 +1,10 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'movies/includes/header.css' %}}">
+{% endblock  %}
+
 
 {% block page_title  %}
 Uvodna stranka
@@ -6,6 +12,7 @@ Uvodna stranka
 
 
 {%block content %}
+    {% include "movies/includes/header.html" %}
     <h1>Filmoteka</h1>
     {% for one_movie in movies_names%}
        <li><a href="{% url 'movie_url' one_movie %}"> {{one_movie}}</a></li>
